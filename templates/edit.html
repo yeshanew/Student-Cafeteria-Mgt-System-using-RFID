@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Update Students' information</h1>
+			<form action="{{ url_for('update_student') }}" method="post" autocomplete="off">
+				<input type="hidden" name="id" value="{{ row['ID'] }}" placeholder="ID number" id="username" required>
+			<label for="username">
+					<i>Name</i>
+				</label>
+				<input type="text" name="name" value="{{ row['Name'] }}" placeholder="Name" id="username"  pattern="[A-Za-z]{2,30}" title="Please enter 2-15 letters" required>
+				<label for="password">
+					<i>Email</i>
+				</label>
+				<input type="email" name="email" value="{{ row['Email'] }}" placeholder="Email" id="email" required>
+               <label for="email">
+			   <i>Age</i>
+			   </label>
+				<input type="text" name="age" value="{{ row['Age'] }}" placeholder="Age" id="email" pattern="[0-9]{2}" title="Please enter 2 digets number" required>
+				<label for="email">
+			   <i>Phone Number</i>
+			   </label>
+				<input type="text" name="phone" value="{{ row['Phone_number'] }}" placeholder="Phone Number" id="email" pattern="[0-9]{10}" title="Please enter 10 digits numbers" required>
+				<label for="email">
+			   <i>Year</i>
+			   </label>
+				<input type="text" name="year" value="{{ row['Year'] }}" placeholder="Batch" id="email" pattern="[0-9]{1}" title="Please enter 1 digits numbers" required>
+				<label for="email">
+				<i>Gender</i>
+				</label>
+				<input name="sex" value="Male"  type="radio" placeholder="Male" autocomplete="off" required> Male<br><input name="sex" value="Female" type="radio" placeholder="Female" autocomplete="off" required>Female</>
+				<label for="email">
+				<i>Status</i>
+				</label>
+				<input name="status" value="Active"  type="radio" placeholder="" autocomplete="off" required>Activate<br><input name="status" value="Deactivated" type="radio" placeholder="" autocomplete="off" required>Deactivate</>
+               <label for="email">
+					<i>Department</i>
+				</label>
+            <select name="department">
+							{% for x in lists %}
+			<option value="{{x.Name}}">{{x.Name}}</option>
+				{% endfor %}
+				</select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Update">
+			</form>
+		</div>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

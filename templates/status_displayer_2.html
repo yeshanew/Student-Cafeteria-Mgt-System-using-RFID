@@ -1,0 +1,32 @@
+{% extends 'layout_4.html' %}
+
+{% block title %}card checking{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="refresh" content="7" charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+	<div>
+    <table border=0 style=color:green;color:#008080;border:3px solid #AD8C08>
+        <tr>
+            <td><h1> Student ID number: {{ record['ID'] }}<h1></td>
+        </tr>
+		        <tr>
+  	<td><img src="/{{user_image}}"></td>
+        </tr>
+    </table><h2>
+	</body>
+</html>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

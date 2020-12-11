@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Account info{% endblock %}
+
+{% block content %}
+<h2>Manage Students' information</h2>
+
+    <p>Students' account infomation</p>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='table_style.css') }}">
+<div class scrollbar>
+<div class='male'>
+    {{ table}}
+	    <div class="msg">{{ msg }}</div>
+</div>
+</div>
+<br><br>
+<p><a href="{{ url_for('sign_up') }}"><img src="/static/icons/admin.png" height="30" width='30'> Create new user account</a></p>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

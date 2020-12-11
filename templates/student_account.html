@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Manage Students' information</h2>
+
+    <p>Students' account infomation</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register New Students</h1>
+			<form enctype="multipart/form-data" action="{{ url_for('add_student') }}" method="post" autocomplete="off">
+			<label for="username">
+			<i>ID Number</i>
+			</label>
+				<input type="text" name="id" placeholder="ID number" id="username"  pattern="[A-Za-z0-9]{2,10}" title="Please enter 2-10 letters or numbers" required>
+			<label for="username">
+					<i>Name</i>
+				</label>
+				<input type="text" name="name" placeholder="Name" id="username" pattern="[A-Z a-z]{2,30}" title="Please enter 2-30 letters" required>
+				<label for="password">
+					<i>Email</i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+               <label for="email">
+			   <i>Age</i>
+			   </label>
+				<input type="text" name="age" placeholder="Age" id="email"  pattern="[0-9]{2}" title="Please enter 2 digets number" required>
+				<label for="email">
+			   <i>Phone Number</i>
+			   </label>
+				<input type="text" name="phone" placeholder="Phone Number" id="email" pattern="[0-9]{10}" title="Please enter 10 digits numbers" required>
+				<label for="email">
+			   <i>Year</i>
+			   </label>
+				<input type="text" name="year" placeholder="batch" id="email" pattern="[0-9]{1}" title="Please enter 1 digits numbers" required>
+				<label for="email">
+				<i>Gender</i>
+				</label>
+				<input name="sex" value="Male" type="radio" placeholder="Male" autocomplete="off" required> Male<br><input name="sex" value="Female" type="radio" placeholder="Female" autocomplete="off" required>Female</>
+				<label for="email">
+					<i>Department</i>
+				</label>
+            <select name="department">
+							{% for x in lists %}
+			<option value="{{x.Name}}">{{x.Name}}
+				{% endfor %}
+				</select>
+				<label for="email">
+					<i>Program</i>
+				</label>
+            <select name="program">
+							{% for x in lists %}
+			<option value="{{x.Program}}">{{x.Program}}
+				{% endfor %}
+				</select>
+				<label for="email">
+				<i>Cafe</i>
+				</label>
+				<input name="cafe" value="Cafe" type="radio" autocomplete="off" required> Cafe<br><input name="cafe" value="Noncafe" type="radio" autocomplete="off" required>Noncafe</>
+			<label for="email">
+					<i>Profile Picture</i>
+				</label>
+			<input type="file" name="file" autocomplete="off" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

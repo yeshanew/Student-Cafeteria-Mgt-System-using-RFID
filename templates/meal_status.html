@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Update Meal Status</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h2>Update Meal Status</h2>
+			<form method="post" action="/breakfast_update">
+			<label for="username">
+			<i>Breakfast</i>
+			</label>
+				<select name="inputBreakfast" size="1"width="25"> <option value="Started">Start</option>  <option value="Finished">Finish</option></select>
+				<input type="submit" value="submit"></form>
+				 <div class="register"><form method="post" action="/lunch_update">
+			<label for="username">
+					<i>Lunch</i>
+				</label>
+				<select name="inputLunch" size="1"width="25">  <option value="Started">Start</option>  <option value="Finished">Finish</option></select>
+				<input type="submit" value="submit"></form>
+				<form method="post" action="/dinner_update">
+				<label for="username">
+					<i>Dinner</i>
+				</label>
+				<select name="inputDinner" size="1"width="25">  <option value="Started">Start</option>  <option value="Finished">Finish</option></select>
+				<input type="submit" value="submit"></form>
+			</form>
+		</div>
+	</body>
+</html>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

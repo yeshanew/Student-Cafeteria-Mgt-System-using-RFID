@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register New Department</h1>
+			<form action="{{ url_for('add_department') }}" method="post" autocomplete="off">
+			<label for="username">
+			<i>Department Name</i>
+			</label>
+				<input type="text" name="name" placeholder="Department Name" id="username" pattern="[A-Z a-z]{2,30}" title="Please enter 2-30 letters" required>
+					<label for="username">
+			<i>Program</i>
+			</label>
+            <select name="program">
+			<option value="Regular">Regular</option><option value="Weekend">Weekend</option><option value="Evening ">Evening </option><option value="Summer">Summer</option><option value="Distance">Distance</option>
+				</select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

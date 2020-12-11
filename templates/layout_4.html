@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="refresh" content="7" charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+		<div class="content">
+		<div class="msg"><span style=color:green><h1>{{ msg }}</h1></style></div>
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

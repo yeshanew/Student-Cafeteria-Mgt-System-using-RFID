@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+	<!doctype html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+	</head>
+	<body>
+		<div class="register">
+		<h1>Sign Up Page</h1>
+			<form action="{{ url_for('sign_up') }}" method="post" autocomplete="off">
+			<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="name" placeholder="Name" id="username" pattern="[A-Za-z]{2,30}" title="Please enter 2-30 letters" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" pattern="[A-Za-z]{2,15}" title="Please enter 2-15 letters" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+               <label for="password">
+			   <i class="fas fa-lock"></i>
+			   </label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="confirm" placeholder="Confirmation Password" id="password" required>
+				<label for="email">
+					<i class="fas fa-envelope"></i>
+				</label>
+            <select name="usertype" size="1"width="25"> <option value="Admin">Admin</option>  <option value="Checker">Checker</option></select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'layout_2.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+<p style=color:green>Welcome back, {{ username }}!</p>
+<p>
+<a href="{{ url_for('check_meal') }}">Start Meal Check</a><br><br>
+<a href="{{ url_for('report') }}">View today report</a><br><br>
+<a href="{{ url_for('meal') }}">View meal status</a><br><br>
+<a href="{{ url_for('meal_search') }}">Check  student meal information </a><br><br>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}

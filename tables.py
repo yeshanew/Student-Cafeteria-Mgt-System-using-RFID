@@ -1,0 +1,41 @@
+from flask_table import Table, Col, LinkCol
+ 
+class Results(Table):
+    ID= Col('ID')
+    Name= Col('Name')
+    edit = LinkCol('Edit', 'edit_view', url_kwargs=dict(id=['ID']))
+    delete = LinkCol('Delete', 'delete_user', url_kwargs=dict(id=['ID']))
+class Account_Results(Table):
+	Name= Col('Name')
+	Username= Col('Username')
+	Email= Col('Email')
+	Date= Col('Date of Registration')
+	Status= Col('User Status')
+	User_type= Col('User Type')
+	edit_acc = LinkCol('Edit', 'edit_account', url_kwargs=dict(id=['Username']))
+	delete_acc = LinkCol('Delete', 'delete_account', url_kwargs=dict(id=['Username']))
+class Meal_status(Table):
+	Breakfast_status= Col('Breakfast')
+	Lunch_status= Col('Lunch')
+	Dinner_status= Col('Dinner')
+class Meal_info(Table):
+	ID=Col('Student ID Number')
+	Time=Col('Time')
+	Breakfast =Col('Breakfast')
+	Lunch= Col('Lunch')
+	Dinner= Col('Dinner')
+	profile = LinkCol('Profile','profile_pic', url_kwargs=dict(id=['ID']))
+class Student_account(Table):
+	ID= Col('ID Number')
+	Name= Col('Student Name')
+	Email= Col('Email')
+	Department= Col('Department')
+	Age= Col('Age')
+	Sex=Col('Sex')
+	Phone_number= Col('Phone Number')
+	Year= Col('Year')
+	Status= Col('Student Status')
+	edit = LinkCol('Edit', 'edit_view', url_kwargs=dict(id=['ID']))
+	delete = LinkCol('Delete', 'delete_user', url_kwargs=dict(id=['ID']))
+	change_card = LinkCol('Change card', 'change_card', url_kwargs=dict(id=['ID']))
+	profile = LinkCol('Profile','profile_pic', url_kwargs=dict(id=['ID']))

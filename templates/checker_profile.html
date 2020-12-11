@@ -1,0 +1,26 @@
+{% extends 'layout_2.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<div>
+    <h2><p style=color:green>Your account details are below:</p>
+    <table border=0 style=color:green;color:#008080;border:3px solid #AD8C08>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['Username'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['Email'] }}</td>
+        </tr>
+    </table><h2>
+</div>
+<body class="loggedin">
+		<nav class="navtop">
+ <i><span style=color:#c1c4c8><h3>&copy Privacy 2020.
+All rights reserved. <br> Developer:Yeshanew Ale.
+ Developer Email:habeshayeshi@gmail.com.</h3></i><div></div>
+	</body>	
+{% endblock %}
